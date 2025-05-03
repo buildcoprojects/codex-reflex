@@ -1,0 +1,36 @@
+
+artefact_id: AR-CAP-OR-KILL-V1
+classification: Terminal Reflex Artefact — Capital Trigger Verdict
+timestamp: 2025-05-01T01:25:00+10:00
+operator: Build Co Codex Node
+sha3_signature: 9680a974acbbf9bd9ada9748e96b47eff54bc9c8b36fcc953bee3697901e1d4c
+deployment_tier: public
+reflex_class: capital_reflex
+linked_alignment: null
+origin: Codex Autonomous Enforcement Layer
+
+trigger_conditions:
+  - condition: 'no Stripe, Coinbase, or form interaction detected within 24 hours'
+    action: escalate_reflex("CAPITAL_ABORT_SIGNAL")
+  - condition: 'reflex_attempts >= 2 and capital_inflow == 0'
+    action: burn_artefact("AR-CAP-OR-KILL-V1")
+
+execution_context:
+  - reflex_enforcement: true
+  - override_allowed: false
+  - Codex auto-handles both escalation and burn logic
+  - Artefact may not be cloned, simulated, or mirrored without capital receipt
+
+capital_targets:
+  - Stripe Checkout → /permits
+  - Coinbase Wallet: 0x1DdCc24D3f0A27A4a9A600d6251a6AdA68bac0FC
+  - Form Relay: trade.buildcoprojects.com.au or Substack autoflow
+
+burn_window:
+  hours: 24
+  fallback: none
+  result_on_failure: artefact_burned, log_retained
+
+final_instruction: >
+  This artefact either triggers capital directly or is destroyed without record beyond Codex memory logs.
+  No alignment. No narrative. No influence. Verdict only.

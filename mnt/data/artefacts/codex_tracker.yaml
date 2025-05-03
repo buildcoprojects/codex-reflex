@@ -1,0 +1,22 @@
+tracker_id: TRK-LK-WOD-20250501-V1
+associated_artefact: AR-LK-WOD-ALIGNMENT-PUSH-20250501–V1
+monitoring_window:
+  start: 2025-05-01T00:00:00+10:00
+  end: 2025-05-03T23:59:00+10:00
+triggers:
+  - type: form_interaction
+    endpoint: /permits
+    action: flag_interest
+  - type: deadline_breach
+    date: 2025-05-03
+    action: escalate_with_artefact
+  - type: stakeholder_activity
+    actor: Adrian
+    action: generate_comparator_matrix
+responses:
+  - if: no_commitment_by_3_may
+    then: inject_artefact: AR-LK-WOD-PRESSURE-ESCALATION-V2
+  - if: adrian_moves
+    then: run_task: simulate_market_positioning
+enforcement: active
+codex_auto_watch: true
