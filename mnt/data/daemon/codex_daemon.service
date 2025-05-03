@@ -1,0 +1,16 @@
+[Unit]
+Description=Codex Watchdog Daemon Service
+After=network.target mt5_bridge.service
+Wants=mt5_bridge.service
+
+[Service]
+Type=simple
+User=buildco
+WorkingDirectory=/mnt/data/daemon
+Environment=OPENAI_API_KEY=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
+ExecStart=/mnt/data/daemon/codex_watchdog.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

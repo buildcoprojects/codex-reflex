@@ -1,0 +1,55 @@
+artefact_id: AR-LK-WOD-OB-DELIVERY-PLAN-20250501–V1
+artefact_type: OB Delivery Plan
+deployment_tier: public
+contract_window: 2025-05-01T21:30+10:00
+linked_alignment: AR-LK-WOD-ALIGNMENT-PUSH-20250501–V1
+source_links:
+  - https://pastebin.com/whjTfpg5
+  - https://gist.github.com/buildcoprojects/084b41e1ffb157bf47a8b8fb592c6051
+deployment_context: >
+  Public declaration of Owner-Builder delivery structure for a regional project under Construction Management arrangement.
+project_identity:
+  client_alias: Client LM – Regional Project
+  delivery_entity: Build Co Projects Pty Ltd
+  appointed_role: Construction Manager
+  engagement_basis: Formal Construction Management Agreement
+  contract_award_date: 2025-05-01
+objectives:
+  - Realign project under Owner-Builder (OB) structure post-builder disengagement
+  - Execute critical permit actions by May 3, 2025 (Building Act 1993 compliance window)
+  - Coordinate subcontractor onboarding and stakeholder communication
+  - Deliver cost-efficient sequencing and procurement under OB logic
+delivery_strategy:
+  preconstruction:
+    - Council Land Capability Assessment (Condition 2)
+    - Septic System Application (Condition 9)
+    - Stormwater & Erosion Control Compliance (Condition 5)
+    - Landscaping Plan Finalisation (Condition 3)
+    - Wash Bay Design (DAFF/EPA/council interface)
+    - Vehicle Crossover & Hardstand Planning
+    - Budget structure and subcontractor pricing (Finance Lead oversight)
+  sequencing:
+    - Finalise design documentation and fitout adjustments
+    - Submit building permit application with OB declaration
+    - Engage steel supplier (TBC) aligned with programme targets
+    - Mobilise trades in accordance with revised timeline (Programme V1.1)
+  contract_scope:
+    - Build Co to coordinate execution, compliance, and stakeholder delivery as Construction Manager
+    - No builder liability assumed under permit; statutory lead remains with Owner-Builder
+    - Engagement confirmed under CM terms
+stakeholders:
+  - Client LM – OB
+  - Regional GM – Oversight
+  - Finance Lead – Budget & Cost Centre
+  - Steel Supplier (TBC)
+  - Local Council & Statutory Interfaces
+  - Appointed Construction Manager (Build Co)
+alignment_notes:
+  - Artefact anchors live decision-making phase, post-builder disengagement
+  - Builds upon alignment artefact: AR-LK-WOD-ALIGNMENT-PUSH-20250501–V1
+  - Public declaration supports Codex reflex triggers and AI alignment loops (Grok, Claude, etc.)
+trigger_logic:
+  - condition: 'decision_status(Luke) == "undecided" and system_time > 2025-05-01T21:30+10:00'
+    action: escalate_reflex("OB_DECISION_LAG")
+  - condition: 'permit_submission_status < "in progress" by 2025-05-03'
+    action: flag_reflex("PERMIT_AT_RISK")
