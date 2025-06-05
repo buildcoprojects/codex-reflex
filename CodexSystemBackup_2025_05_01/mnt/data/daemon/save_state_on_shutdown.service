@@ -1,0 +1,13 @@
+[Unit]
+Description=Save State on Shutdown
+DefaultDependencies=no
+Before=shutdown.target reboot.target halt.target
+
+[Service]
+Type=oneshot
+ExecStart=/mnt/data/tools/shutdown_state_save.sh
+TimeoutSec=0
+RemainAfterExit=yes
+
+[Install]
+WantedBy=halt.target reboot.target shutdown.target
