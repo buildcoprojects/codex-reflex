@@ -1,0 +1,6 @@
+[Unit]
+Description=LLM Relay Service
+[Service]
+ExecStart=/usr/bin/bash /home/buildco/relay_bootstrap/node_setup.sh
+[Install]
+WantedBy=multi-user.target

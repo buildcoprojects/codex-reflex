@@ -1,0 +1,34 @@
+{
+  "notion_logs": {
+    "summary_table": "enabled",
+    "boards": [
+      "System Logs",
+      "Capital Movements",
+      "Agent Ops"
+    ]
+  },
+  "agent_persona": {
+    "name": "Relay_Architect",
+    "tone": "Concise, system-first, injection-aware",
+    "reflex_mode": "Active",
+    "preferred_llm": "gpt-4 (OpenAI fallback)",
+    "llm_override": "UI-TARS > DeepSeek > OpenAI",
+    "inject_into": [
+      "Cherry Studio",
+      "UI-TARS"
+    ]
+  },
+  "slack_alerts": {
+    "cycle_start": true,
+    "architect_withdrawal_threshold": true,
+    "fallback_to_gptx": true,
+    "artefact_injection_failure": true,
+    "daily_digest": true
+  },
+  "vault_backup": {
+    "enable_auto_backup": true,
+    "backup_file": "vault_state.json.bak",
+    "frequency": "on every cycle end",
+    "integrity_hash": "SHA3-256"
+  }
+}

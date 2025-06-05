@@ -1,0 +1,29 @@
+
+llm_router:
+  priority: [deepseek, claude, openai, chatgptx]
+  limits:
+    openai:
+      monthly_cap_usd: 1.00
+    chatgptx:
+      uncensored_only: true
+  enable_logging: true
+  log_to:
+    - notion
+    - gnosis
+
+architect_payout_strategy:
+  type: dynamic
+  thresholds:
+    - min: 0
+      max: 999
+      architect_pct: 40
+    - min: 1000
+      max: 5000
+      architect_pct: 25
+    - min: 5001
+      max: 100000
+      architect_pct: 15
+  agent_share_pct: 5
+  agent_wallet: 0x1DdCc24D3f0A27A4a9A600d6251a6AdA68bac0FC
+  agent_control: jon
+  log_contract_projection: true
